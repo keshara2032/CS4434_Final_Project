@@ -1,0 +1,15 @@
+{
+  "delay": {
+    "type": "rand",
+    "values": [1, 50]
+  },
+  "drop": {
+    "type": "none",
+    "values": [40, 100]
+  },
+  "log": {
+    "enabled": true,
+    "print_enabled": false,
+    "file_name": "relay_log.txt"
+  }
+}
