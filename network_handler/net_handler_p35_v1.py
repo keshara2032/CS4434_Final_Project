@@ -53,12 +53,15 @@ def udp_relay(source_host, source_port, target_host, target_port):
             if not buffer.empty():
                 data, addr = buffer.get()
 
-                deserialized_packet = pickle.loads(data)
-                if print_enabled:
-                    print("Received data from {}: ".format(addr))
-                    for attr, value in vars(deserialized_packet).items():
-                        print("{}: {}".format(attr, value))
-
+                try:
+                    deserialized_packet = pickle.loads(data)
+                    if print_enabled:
+                        print("Received data from {}: ".format(addr))
+                        for attr, value in vars(deserialized_packet).items():
+                            print("{}: {}".format(attr, value))
+                except:
+                    if print_enabled:
+                        print("Parsing failed!")
                 delay_ms = 0
                 drop_percent = 0
                 # Check if delay type is not "none"

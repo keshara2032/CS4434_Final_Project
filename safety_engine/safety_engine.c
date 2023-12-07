@@ -7,7 +7,7 @@
 #include <arpa/inet.h>
 #include <errno.h>
 
-#define PORT 9999
+#define PORT 54321
 #define BUFFER_SIZE 1024
 #define TIMEOUT_SECONDS 1 // Timeout in seconds
 #define TIMEOUT_uSECONDS 0 // Timeout in seconds
@@ -63,17 +63,18 @@ int main() {
             }
         } else {
             // Display received packet
-            printf("Received message: %s\n", buffer);
+            // printf("Received message: %s\n", buffer);
                 // Convert string to integer using atoi()
             int new_sequence = atoi(buffer);
             
-            printf("Converted integer: %d\n", new_sequence);
+            printf("Previous Sequence: %d, Received Sequence: %d\n", old_sequence,new_sequence);
 
             if(new_sequence == old_sequence+1){
                 printf("Correct sequence received!\n");
                 old_sequence = new_sequence;
             }else{
                 printf("Incorrect sequence received!\n");
+                old_sequence = new_sequence;
             }
    
         }

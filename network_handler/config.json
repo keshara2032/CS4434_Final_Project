@@ -1,11 +1,11 @@
 {
   "delay": {
-    "type": "rand",
+    "type": "none",
     "values": [1, 50]
   },
   "drop": {
-    "type": "none",
-    "values": [40, 100]
+    "type": "seq",
+    "values": [40]
   },
   "log": {
     "enabled": true,
