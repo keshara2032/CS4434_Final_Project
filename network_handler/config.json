@@ -1,10 +1,10 @@
 {
   "delay": {
-    "type": "none",
+    "type": "rand",
     "values": [1, 50]
   },
   "drop": {
-    "type": "seq",
+    "type": "none",
     "values": [40]
   },
   "log": {
